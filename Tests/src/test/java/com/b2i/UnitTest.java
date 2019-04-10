@@ -18,8 +18,11 @@ public class UnitTest {
 	@Test
 	public void canGoToJavaPathPage() {
 		Pages.pathPages().goTo();
-		Pages.pathPages().goToJavaPath();
-		Assert.assertTrue(Pages.pathPages().isAt());
+		PathPage pathPage = Pages.pathPages().getPathPage("Java");
+		pathPage.goTo();
+		//Pages.pathPages().goToJavaPath();
+		//Assert.assertTrue(Pages.pathPages().isAt());
+		Assert.assertTrue(pathPage.isAtPathPage("Java"));
 	}
 	
 	/*@AfterClass

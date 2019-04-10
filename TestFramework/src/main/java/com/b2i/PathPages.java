@@ -11,10 +11,20 @@ public class PathPages {
 		Browser.goTo(url);
 	}
 
-	public void goToJavaPath() {
-		Browser.driver.findElement(By.linkText("Java")).click();
-	}
+	/*public void goToJavaPath() {
+		Browser.driver.findElement(By.xpath("/html/body/div[2]/div/a[1]")).click();
+		Browser.driver.findElement(By.xpath("//div[@id='pathContent']/div[2]/a/div/div[2]")).click();
+	}*/
 
+	public PathPage getPathPage(String page) {
+		switch (page) {
+		case "Java":
+			return Pages.javaPathPage();
+		}
+		return null;
+	}
+	
+	
 	public boolean isAt() {
 		return Browser.title().equals(title);
 	}
