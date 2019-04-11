@@ -13,12 +13,15 @@ public class Pages {
 		return pathPages;
 	}
 
+	// ====================================================
+	// 					With a factory
+	// ====================================================
+
 	public static PathPage javaPathPage() {
 		PathPage javaPathPage = new JavaPathPage();
 		PageFactory.initElements(Browser.driver, javaPathPage);
 		return javaPathPage;
 	}
+	// ====================================================
 
-	
-	
 }
